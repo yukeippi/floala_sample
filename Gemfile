@@ -70,3 +70,7 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
+
+gem "wysiwyg-rails"
+# gem 'font-awesome-rails', '~> 4.7'
+# gem "jquery-rails"
