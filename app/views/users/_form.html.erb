@@ -27,5 +27,30 @@
 <% end %>
 
 <script>
-  new FroalaEditor('#user_memo')
+  new FroalaEditor('#user_memo', {
+        imageUploadURL: "/attachments/attach.json",
+    imageUploadMethod: "POST",
+    events: {
+      'image.beforeRemove': (image) => {
+        const image_url_ary = image[0].currentSrc.split("/")
+        const id = image_url_ary.slice(image_url_ary.length - 2, image_url_ary.length - 1)
+        const url = "/attachments/remove/" + id[0]
+        fetch(url)
+          .then((response) => {
+            if (!response.ok) {
+              throw new Error('Network response was not OK');
+            }
+            return response.json();
+          })
+          .then((json) => {
+            // 成功
+            return true;
+          })
+          .catch((error) => {
+            console.error('There has been a problem with your fetch operation:', error);
+            return false;
+          });
+      }
+    }
+  });
 </script>   

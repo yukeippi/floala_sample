@@ -64,3 +64,5 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
+
+gem 'carrierwave', '>= 3.0.0.beta', '< 4.0'
