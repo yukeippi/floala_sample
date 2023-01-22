@@ -1,6 +1,11 @@
 <p style="color: green"><%= notice %></p>
 
-<%= render @user %>
+<div>
+  <%= @user.name %>
+</div>
+<div class="fr-view">
+  <%= @user.memo.html_safe %>
+</div>
 
 <div>
   <%= link_to "Edit this user", edit_user_path(@user) %> |
