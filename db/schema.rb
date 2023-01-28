@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_01_22_073252) do
+ActiveRecord::Schema[7.0].define(version: 2023_01_28_020338) do
   create_table "attachments", force: :cascade do |t|
     t.string "file"
     t.datetime "created_at", null: false
@@ -22,6 +22,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_22_073252) do
     t.text "memo"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.json "attachment_ids"
   end
 
 end
